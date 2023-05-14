@@ -8,9 +8,9 @@ CREATE TABLE customer (
     customerid INT PRIMARY KEY,
     customername VARCHAR(50),
     lastname VARCHAR(50),
-  	salary INT,
-  	companyname VARCHAR(30),
-  	department VARCHAR(30),
+    salary INT,
+    companyname VARCHAR(30),
+    department VARCHAR(30),
     country VARCHAR(50),
     age INT,
     phone INT
