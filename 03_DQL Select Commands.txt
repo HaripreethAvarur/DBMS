@@ -1,4 +1,4 @@
-/* DML: INSERT, UPDATE, DELETE*/
+/* DQL: Select*/
 
 /*DROP TABLE TO RERUN ITERATIONS*/
 DROP TABLE customer;
