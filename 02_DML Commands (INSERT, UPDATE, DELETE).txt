@@ -1,0 +1,37 @@
+/* DML: INSERT, UPDATE, DELETE*/
+
+/*DROP TABLE TO RERUN ITERATIONS*/
+DROP TABLE customer;
+
+/* CREATE */
+CREATE TABLE customer (
+    customerid INT PRIMARY KEY,
+    customername VARCHAR(50),
+    lastname VARCHAR(50),
+    country VARCHAR(50),
+    age INT,
+    phone INT 
+);
+
+/*INSERT DATA INTO TABLE*/
+INSERT INTO 
+    customer(customerid, customername, lastname, country, age, phone) 
+VALUES
+ 	(1, 'john', 'singh', 'USA', 22, 1234567890),
+    (2, 'mark', 'singh', 'USA', 20, 2345678901),
+    (3, 'ram', 'patel', 'India', 25, 3456789012),
+    (4, 'lakshmi', 'rao', 'India', 32, 4567890123),
+    (5, 'buddhika', 'danuja', 'Sri Lanka', 57, 5678901234);
+    
+SELECT * FROM customer;
+
+/*UPDATE*/
+UPDATE customer SET lastname = 'tulsi' WHERE customerid=3;
+UPDATE customer SET lastname = 'patel', customername = 'alex' WHERE customerid=1;
+SELECT * FROM customer;
+
+/*DELETE*/
+DELETE FROM customer WHERE customerid = 2;
+DELETE FROM customer WHERE country = "USA";
+
+SELECT * FROM customer;
