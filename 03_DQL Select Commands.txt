@@ -1,0 +1,52 @@
+/* DML: INSERT, UPDATE, DELETE*/
+
+/*DROP TABLE TO RERUN ITERATIONS*/
+DROP TABLE customer;
+
+/* CREATE */
+CREATE TABLE customer (
+    customerid INT PRIMARY KEY,
+    customername VARCHAR(50),
+    lastname VARCHAR(50),
+  	salary INT,
+  	companyname VARCHAR(30),
+  	department VARCHAR(30),
+    country VARCHAR(50),
+    age INT,
+    phone INT,
+  	hiredate DATE
+);
+
+/*INSERT DATA INTO TABLE*/
+INSERT INTO 
+    customer(customerid, customername, lastname, salary, companyname, department, country, age, phone, hiredate) 
+VALUES
+ 	(1, 'john', 'rome', 50000, 'HCL', 'Software', 'USA', 22, 1234567890, '30-Sept-2012'),
+    (2, 'philip', 'welms', 10000, 'Infosys', 'Software', 'India', 26, 2345678901, '12-Sept-2022'),
+    (3, 'charles', 'lare', 500000, 'Meta', 'Software', 'France', 32, 3456789012, '30-Aug-2007'),
+    (4, 'gwen', 'king', 30000, 'Google', 'Software', 'France', 52, 4567890123, '05-June-2010'),
+    (5, 'rama', 'acharya', 40000, 'Apple', 'Software', 'India', 55, 5678901234, '15-July-2015'),
+    (6, 'krishna', '', 35000, 'SpaceX', 'Aero', 'USA', 46, 6789012345, '30-Dec-2012'),
+    (7, 'hari', '', 821000, 'Tata', 'Auto', 'India', 20, 7890123456, '30-Oct-2012'),
+    (8, 'danuja', 'rao', 500000, 'Google', 'Software', 'Sri Lanka', 21, 8901234567, '21-Sept-2017'),
+    (9, 'buddhika', 'das', 20000, 'Apple', 'Software', 'Nepal', 29, 9012345678, '08-Feb-2021'),
+    (10, 'tulsi', 'kashyap', 5550000, 'SpaceX', 'Aero', 'USA', 30, 0123456789, '13-Mar-2013');
+   
+/*1*/SELECT * FROM customer;
+/*2*/SELECT customername, customerid FROM customer;
+/*3*/SELECT customername FROM customer WHERE age>=25;
+/*4*/SELECT lastname FROM customer WHERE country='India';
+/*5*/SELECT department, salary FROM customer GROUP BY companyname HAVING salary>30000;
+/*6*/SELECT lastname AS "surname", salary*12 as annualsalary FROM customer;
+/*7*/SELECT customername || ' ' || customerid AS concat FROM customer; 
+/*8*/SELECT customername, department FROM customer WHERE department='Aero';
+/*9*/SELECT customername, customerid FROM customer WHERE customerid IN (1,2,3,4);
+/*10*/SELECT customername, companyname FROM customer WHERE companyname != 'Google' ORDER BY companyname ASC;
+
+/*14*/SELECT customername FROM customer WHERE customername like '_a%';
+/*15*/SELECT customername, lastname, salary FROM customer ORDER BY salary DESC;
+
+/*11*/SELECT customername, hiredate FROM customer WHERE hiredate BETWEEN '30-Aug-2012' AND '20-Sept-2018';
+/*12*/SELECT customername, lastname FROM customer WHERE lastname is NULL; 
+/*13*/SELECT customername FROM customer WHERE customername LIKE '%t' OR 'a%';
+
